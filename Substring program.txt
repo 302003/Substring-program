@@ -1,0 +1,46 @@
+Develop a C# program to list all substrings in a given string. [ Hint: use of Substring() method]
+
+ using System;
+
+class SubstringExample
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string inputString = Console.ReadLine();
+
+        Console.WriteLine("Substrings of the given string:");
+        ListAllSubstrings(inputString);
+
+        Console.ReadLine(); // To keep the console window open
+    }
+
+    static void ListAllSubstrings(string str)
+    {
+        for (int i = 0; i < str.Length; i++)
+        {
+            for (int j = i + 1; j <= str.Length; j++)
+            {
+                string substring = str.Substring(i, j - i);
+                Console.WriteLine(substring);
+            }
+        }
+    }
+}
+
+
+
+Output:
+Enter a string: RAJI
+Substrings of the given string:
+R
+RA
+RAJ
+RAJI
+A
+AJ
+AJI
+J
+JI
+I
+
